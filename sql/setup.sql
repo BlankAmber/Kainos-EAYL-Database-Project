@@ -3,9 +3,9 @@ USE db_PICASO_OdhranH;
 
 # SQL for creating Delivery Employee table
 CREATE TABLE DeliveryEmployee(
-DEmpID int auto_increment not null PRIMARY KEY,
-DEmpForename varchar(20) not null,
-DEmpSurname varchar(20) not null,
-DEMPBankNum VARCHAR(16) not null,
-NationalInsuranceNum Varchar(9) not null
+	DEmpID INT AUTO_INCREMENT NOT NULL PRIMARY KEY,
+	DEmpForename VARCHAR(20) NOT NULL,
+	DEmpSurname VARCHAR(20) NOT NULL,
+	DEMPBankNum VARCHAR(16) NOT NULL,
+	NationalInsuranceNum VARCHAR(9) NOT NULL
 );
