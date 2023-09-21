@@ -6,7 +6,10 @@ CREATE TABLE Client (
 	Forename VARCHAR(20) NOT NULL,
 	Surname VARCHAR(20) NOT NULL,
 	Address VARCHAR(50) NOT NULL,
-	Phone VARCHAR(15) NOT NULL
+	Phone VARCHAR(15) NOT NULL,
+    SalesEmpID INT NOT NULL,
+	ContractWon DATETIME NOT NULL,
+    CONSTRAINT FOREIGN KEY (SalesEmpID) REFERENCES SalesEmployee(SalesEmpID)
 );
 
 # SQL for creating Delivery Employee table
