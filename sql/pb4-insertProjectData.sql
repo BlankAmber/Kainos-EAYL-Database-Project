@@ -1,26 +1,26 @@
 USE db_PICASO_OdhranH;
 
-INSERT INTO Project (ProjectID,ProjectName,ProjectValue,ClientID) VALUES
-	(1,'Wokday',100000.00,1),
-	(2,'InnovateX',9999999.00,2),
-	(3,'ByteFusion',10.00,3),
-	(4,'InfinitiCode',9999999.99,4),
-	(5,'VirtuTech',1.99,5),
-	(6,'QuantumSync',878731.12,6),
-	(7,'DataPulse',7471.70,7),
-	(8,'Cipher Craft',64.00,8),
-	(9,'NovaWave',111111.00,9),
-	(10,'Syntho Sphere',10.00,10),
-	(11,'NexaGenix Labs',38782.39,12),
-	(12,'Spark Circuit',872879.00,12),
-	(13,'Aurora Stream',999998.00,4),
-	(14,'Nebula Sync',456.19,4),
-	(15,'EvoWare',1001.00,5),
-	(16,'CodeNebula',99.99,17),
-	(17,'Quantum Vista',12.34,18),
-	(18,'Infinity Bridge',45.67,19),
-	(19,'Zenith Scape Software',89.90,19),
-	(20,'Omni Core',9392.10,21);
+INSERT INTO Project (ProjectID,ProjectName,ProjectValue) VALUES
+	(1,'Wokday',100000.00),
+	(2,'InnovateX',9999999.00),
+	(3,'ByteFusion',10.00),
+	(4,'InfinitiCode',9999999.99),
+	(5,'VirtuTech',1.99),
+	(6,'QuantumSync',878731.12),
+	(7,'DataPulse',7471.70),
+	(8,'Cipher Craft',64.00),
+	(9,'NovaWave',111111.00),
+	(10,'Syntho Sphere',10.00),
+	(11,'NexaGenix Labs',38782.39),
+	(12,'Spark Circuit',872879.00),
+	(13,'Aurora Stream',999998.00),
+	(14,'Nebula Sync',456.19),
+	(15,'EvoWare',1001.00),
+	(16,'CodeNebula',99.99),
+	(17,'Quantum Vista',12.34),
+	(18,'Infinity Bridge',45.67),
+	(19,'Zenith Scape Software',89.90),
+	(20,'Omni Core',9392.10);
 
 INSERT INTO Technologies (TechID,TechType) VALUES
 	(1,'Python'),

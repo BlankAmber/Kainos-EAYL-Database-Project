@@ -5,7 +5,7 @@ CREATE TABLE Project (
   ProjectID int NOT NULL AUTO_INCREMENT,
   ProjectName varchar(50) NOT NULL,
   ProjectValue decimal(9,2) NOT NULL,
-  ClientID int NOT NULL,
+  ClientID int,
   PRIMARY KEY (ProjectID),
   CONSTRAINT FOREIGN KEY (ClientID) REFERENCES Client (ClientID)
 );
