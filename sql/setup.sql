@@ -1,42 +1,63 @@
 CREATE DATABASE db_PICASO_OdhranH;
 USE db_PICASO_OdhranH;
 
+CREATE TABLE Client (
+	ClientID INT AUTO_INCREMENT PRIMARY KEY,
+	Forename VARCHAR(20) NOT NULL,
+	Surname VARCHAR(20) NOT NULL,
+	Address VARCHAR(50) NOT NULL,
+	Phone VARCHAR(15) NOT NULL
+);
+
 # SQL for creating Delivery Employee table
-CREATE TABLE DeliveryEmployee(
+CREATE TABLE DeliveryEmployee (
 	DEmpID INT AUTO_INCREMENT NOT NULL PRIMARY KEY,
 	DEmpForename VARCHAR(20) NOT NULL,
 	DEmpSurname VARCHAR(20) NOT NULL,
 	DEMPBankNum VARCHAR(16) NOT NULL,
 	NationalInsuranceNum VARCHAR(9) NOT NULL
+);
 
 CREATE TABLE Project (
-  ProjectID int NOT NULL AUTO_INCREMENT,
-  ProjectName varchar(50) NOT NULL,
-  ProjectValue decimal(9,2) NOT NULL,
-  ClientID int,
-  PRIMARY KEY (ProjectID),
-  CONSTRAINT FOREIGN KEY (ClientID) REFERENCES Client (ClientID)
+	ProjectID INT NOT NULL AUTO_INCREMENT,
+	ProjectName VARCHAR(50) NOT NULL,
+	ProjectValue DECIMAL(9,2) NOT NULL,
+	ClientID INT,
+	TechLeadID INT NOT NULL,
+	PRIMARY KEY (ProjectID),
+	CONSTRAINT FOREIGN KEY (ClientID) REFERENCES `Client`(ClientID),
+	CONSTRAINT FOREIGN KEY  (TechLeadID) REFERENCES DeliveryEmployee(DEmpID)
 );
 
 CREATE TABLE Technologies (
-  TechID int AUTO_INCREMENT NOT NULL PRIMARY KEY,
-  TechType varchar(50) NOT NULL
+	TechID INT AUTO_INCREMENT NOT NULL PRIMARY KEY,
+	TechType VARCHAR(50) NOT NULL
 );
 
 CREATE TABLE Project_Tech (
-  ProjectID int NOT NULL,
-  TechID int NOT NULL,
-  PRIMARY KEY (ProjectID,TechID),
-  CONSTRAINT FOREIGN KEY (ProjectID) REFERENCES Project (ProjectID),
-  CONSTRAINT FOREIGN KEY (TechID) REFERENCES Technologies (TechID)
+	ProjectID INT NOT NULL,
+	TechID INT NOT NULL,
+	PRIMARY KEY (ProjectID,TechID),
+	CONSTRAINT FOREIGN KEY (ProjectID) REFERENCES Project(ProjectID),
+	CONSTRAINT FOREIGN KEY (TechID) REFERENCES Technologies(TechID)
 );
 
 CREATE TABLE SalesEmployee (
-  SaleID int AUTO_INCREMENT PRIMARY KEY,
-  Forename varchar(20) NOT NULL,
-  Surname Varchar(20) NOT NULL,
-  Salary decimal(9,2) NOT NULL,
-  BAN varchar(16) NOT NULL,
-  NINumber varchar(9) NOT NULL,
-  ComRate decimal(9,2) NOT NULL
+	SaleID INT AUTO_INCREMENT PRIMARY KEY,
+	Forename VARCHAR(20) NOT NULL,
+	Surname VARCHAR(20) NOT NULL,
+	Salary DECIMAL(9,2) NOT NULL,
+	BAN VARCHAR(16) NOT NULL,
+	NINumber VARCHAR(9) NOT NULL,
+	ComRate DECIMAL(9,2) NOT NULL
+);
+
+CREATE TABLE Project_DeliveryEmployee(
+	EmployeeID INT,
+	ProjectID INT,
+	StartDate DATE NOT NULL DEFAULT NOW(),
+	EndDate DATETIME NULL,
+	PRIMARY KEY(EmployeeID, ProjectID),
+	FOREIGN KEY (EmployeeID) REFERENCES DeliveryEmployee(DEmpID),
+	FOREIGN KEY (ProjectID) REFERENCES Project(ProjectID)
 );
