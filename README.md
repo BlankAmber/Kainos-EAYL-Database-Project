@@ -1,3 +1,3 @@
-# Kainos-EAYL-Database-Projec
+# Kainos-EAYL-Database-Project
 
 Team Picaso
