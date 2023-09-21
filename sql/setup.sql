@@ -8,3 +8,4 @@ CREATE TABLE Client (
     Address varchar(50) NOT NULL,
     Phone varchar(15) NOT NULL
 );
+
