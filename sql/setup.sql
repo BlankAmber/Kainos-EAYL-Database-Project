@@ -1,14 +1,22 @@
 CREATE DATABASE db_PICASO_OdhranH;
 USE db_PICASO_OdhranH;
 
+CREATE TABLE Client (
+  ClientID int AUTO_INCREMENT PRIMARY KEY,
+    Forename varchar(20) NOT NULL,
+    Surname varchar(20) NOT NULL,
+    Address varchar(50) NOT NULL,
+    Phone varchar(15) NOT NULL
+);
+
 # SQL for creating Delivery Employee table
-CREATE TABLE DeliveryEmployee(
+CREATE TABLE DeliveryEmployee (
 	DEmpID INT AUTO_INCREMENT NOT NULL PRIMARY KEY,
 	DEmpForename VARCHAR(20) NOT NULL,
 	DEmpSurname VARCHAR(20) NOT NULL,
 	DEMPBankNum VARCHAR(16) NOT NULL,
 	NationalInsuranceNum VARCHAR(9) NOT NULL
-    );
+);
 
 CREATE TABLE Project (
   ProjectID INT NOT NULL AUTO_INCREMENT,
@@ -44,8 +52,6 @@ CREATE TABLE SalesEmployee (
   ComRate DECIMAL(9,2) NOT NULL
 );
 
-
-
 CREATE TABLE Project_DeliveryEmployee(
 	EmployeeID INT,
 	ProjectID INT,
@@ -56,4 +62,3 @@ CREATE TABLE Project_DeliveryEmployee(
 	FOREIGN KEY (ProjectID) REFERENCES Project(ProjectID)
 	
 );
-
