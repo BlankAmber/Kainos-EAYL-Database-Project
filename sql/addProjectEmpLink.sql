@@ -1,4 +1,7 @@
-# T
+# This SQL command allows you to connect Delivery Employees with projects they work on.
+# This takes the format (Employee ID, Project ID, Tech Lead Status, Start date, End date)
+# To signify a team member is a tech lead, use 1. Otherwise, insert 0.
+# If a team member is still employed on a task, set their end-date to null.
 
 insert into Project_DeliveryEmployee(EmployeeID, ProjectID, isTechLead, startDate, endDate) values
 (1, 2, 0, '2022/07/23', '2023/02/15'),
