@@ -1,0 +1,2 @@
+CREATE DATABASE db_PICASO_OdhranH;
+USE db_PICASO_OdhranH;
