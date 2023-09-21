@@ -53,7 +53,7 @@ CREATE TABLE Project_DeliveryEmployee(
 	endDate DATETIME NULL,
 	PRIMARY KEY(EmployeeID, ProjectID),
 	FOREIGN KEY (EmployeeID) REFERENCES DeliveryEmployee(DEmpID),
-	FOREIGN KEY (ProjectID) REFERENCES Project(ProjectID),
+	FOREIGN KEY (ProjectID) REFERENCES Project(ProjectID)
 	
 );
 
