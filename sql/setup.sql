@@ -8,6 +8,7 @@ CREATE TABLE DeliveryEmployee(
 	DEmpSurname VARCHAR(20) NOT NULL,
 	DEMPBankNum VARCHAR(16) NOT NULL,
 	NationalInsuranceNum VARCHAR(9) NOT NULL
+    );
 
 CREATE TABLE Project (
   ProjectID int NOT NULL AUTO_INCREMENT,
